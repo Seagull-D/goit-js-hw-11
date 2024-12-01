@@ -15,30 +15,35 @@ form.addEventListener("submit", toSabmit);
 
 function toSabmit(evt) {
     evt.preventDefault();
-    const {picture} = evt.target.elements
+    const { picture } = evt.target.elements;
     getPictures(picture.value)
         .then((data) => {
             if (!data.hits.length) { iziToast.show({
       message: "Sorry, there are no images matching your search query. Please try again!",
       position: "topRight",
       color: "red"
-            })
+            });
                 
             }
             else {
           
 
-                list.innerHTML = createMurkup(data.hits)
+                list.innerHTML = createMurkup(data.hits);
+                litebox.refresh(); 
                 }           
             
          })
         .catch((error) => console.log(error.message))
         .finally(() => {
             picture.value = "" 
-            litebox.refresh()
+            
         })
 }
 
+const litebox = new SimpleLightbox('.list-js a', {
+  captionsData: 'alt',
+  captionDelay: 250,
+  captionClass: 'imageTitle',
+});
 
-const litebox = new SimpleLightbox('.list-js a', { /* options */ });
 
