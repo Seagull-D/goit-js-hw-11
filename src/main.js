@@ -19,14 +19,26 @@ form.addEventListener("submit", toSabmit);
 
 function toSabmit(evt) {
     evt.preventDefault();
+    
     const { picture } = evt.target.elements;
-    if (picture.value) {
-        console.dir(picture.value)
-      
+    const value = picture.value.trim();
+    console.log(value)
+     list.innerHTML = ""; 
+    if(!value || value === " "){
+        { iziToast.show({
+      title:":(",         
+      message: "Please add request!",
+      position: "center",
+      color: "red"
+            });
+            list.innerHTML = ":(";
+            return
+              
+            }
     }
-    list.innerHTML = ""; 
+   
 loader.classList.remove("hidden");
-    getPictures(picture.value)
+    getPictures(value)
             .then((data) => {
        
             if (!data.hits.length) { iziToast.show({
