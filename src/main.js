@@ -20,18 +20,21 @@ form.addEventListener("submit", toSabmit);
 function toSabmit(evt) {
     evt.preventDefault();
     const { picture } = evt.target.elements;
+    if (picture.value) {
+        console.dir(picture.value)
+      
+    }
 loader.classList.remove("hidden");
     getPictures(picture.value)
             .then((data) => {
-     
+       
             if (!data.hits.length) { iziToast.show({
       title:"X",         
       message: "Sorry, there are no images matching your search query. Please try again!",
       position: "center",
       color: "red"
             });
-                 data.hits = [];
-                
+               list.innerHTML = "";  
             }
             else {
           
@@ -45,6 +48,7 @@ loader.classList.remove("hidden");
         .finally(() => {
             picture.value = "" 
             loader.classList.add("hidden");
+                
         })
 }
 

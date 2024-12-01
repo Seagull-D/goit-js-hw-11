@@ -25,12 +25,25 @@
   margin-top: 36px;
   margin-bottom: 32px;
 }
-.intyt-style{
+.input-style {
   min-width: 272px;
   height: 40px;
-  border: 1px solid #808080;
+  border: 2px solid #ccc;
   border-radius: 4px;
   padding-left: 16px;
+  outline: none;
+
+}
+.input-style:hover {
+  border-color: black;
+  transition: all 0.5s;
+
+}
+
+.input-style:focus {
+  border-color: #4E75FF;
+  transition: all 0.5s;
+
 }
 .form button {
 font-weight: 600;
@@ -94,6 +107,7 @@ margin: auto;
   background: #FFF;
   border-radius: 4px;
   overflow: hidden;
+
 }
 
 .loader:before {
