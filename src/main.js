@@ -24,6 +24,7 @@ function toSabmit(evt) {
         console.dir(picture.value)
       
     }
+    list.innerHTML = ""; 
 loader.classList.remove("hidden");
     getPictures(picture.value)
             .then((data) => {
