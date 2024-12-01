@@ -34,6 +34,7 @@ loader.classList.remove("hidden");
       position: "center",
       color: "red"
             });
+                
                list.innerHTML = "<h1>Ooops... 👻</h1>";  
             }
             else {
@@ -48,7 +49,7 @@ loader.classList.remove("hidden");
         .finally(() => {
             picture.value = "" 
             loader.classList.add("hidden");
-                
+            
         })
 }
 
