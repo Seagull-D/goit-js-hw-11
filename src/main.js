@@ -34,7 +34,7 @@ loader.classList.remove("hidden");
       position: "center",
       color: "red"
             });
-               list.innerHTML = "";  
+               list.innerHTML = "<h1>Ooops... 👻</h1>";  
             }
             else {
           
