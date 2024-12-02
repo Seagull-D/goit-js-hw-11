@@ -58,7 +58,15 @@ loader.classList.remove("hidden");
                 }           
             
          })
-        .catch((error) => console.log(error.message))
+        .catch((error) => {
+            console.log(error.message)
+            iziToast.show({
+                title: "X",
+                message: `${error.message}`,
+                position: "center",
+                color: "red"
+            })
+        })
         .finally(() => {
             picture.value = "" 
             loader.classList.add("hidden");
