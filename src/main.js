@@ -40,7 +40,7 @@ function toSabmit(evt) {
 loader.classList.remove("hidden");
     getPictures(value)
             .then((data) => {
-       
+                console.log(data)
             if (!data.hits.length) { iziToast.show({
       title:"X",         
       message: "Sorry, there are no images matching your search query. Please try again!",
